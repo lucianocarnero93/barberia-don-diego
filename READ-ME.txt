@@ -1,1 +1,9 @@
 Landing page para Barberia Don Diego en la ciudad de Santa Fe, los requisitos son solamente un navegador web moderno y un servidor local. Para levantar este proyecto solo hay que modificar precios y estilos, fotos con la barberia que utilice el servicio y adecuarse a los usuarios que tenga la barberia.
+Instalacion y ejecución:
+Instalar dependencias
+npm install
+Ejecutar modo desarrollo:
+npm run dev
+Abrir el navegador:
+http://localhost:3000
+
