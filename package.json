@@ -1,0 +1,26 @@
+{
+  "name": "barberia-don-diego",
+  "version": "1.0.0",
+  "description": "Barbería tradicional argentina - Sitio web oficial",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "build": "npm install"
+  },
+  "keywords": [
+    "barberia",
+    "peluqueria",
+    "estetica",
+    "argentina"
+  ],
+  "author": "Luciano Carnero",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
