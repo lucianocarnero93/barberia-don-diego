@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>Barbería Don Diego - Barbería Tradicional Argentina</title>
+        <title>Barbería Don Diego - Barbería tradicional Argentina</title>
         <meta content="width=device-width, initial-scale=1.0" name="viewport">
         <meta content="Barbería Tradicional Argentina" name="keywords">
         <meta content="Barbería Don Diego - Estilo tradicional que te hace sentir como en casa" name="description">
@@ -13,12 +13,16 @@
         <!-- Google Font -->
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
-        <!-- CSS Libraries -->
+        <!-- CDN para estilos -->
         <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="lib/animate/animate.min.css" rel="stylesheet">
         <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
         <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        
+        <!-- CDN para npm adicionales -->
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/swiper@9.0.0/swiper-bundle.min.css" rel="stylesheet">
 
         <!-- Template Stylesheet -->
         <link href="css/style.css" rel="stylesheet">
@@ -33,11 +37,11 @@
                         <div class="top-bar-left">
                             <div class="text">
                                 <h2>8:00 - 20:00</h2>
-                                <p>Horario de Atención Lun - Vie</p>
+                                <p>Horario de atención Lun - Vie</p>
                             </div>
                             <div class="text">
                                 <h2>+54 342 2345-6789</h2>
-                                <p>Llamanos para tu Turno</p>
+                                <p>Llamanos para tu turno</p>
                             </div>
                         </div>
                     </div>
@@ -86,9 +90,8 @@
         </div>
         <!-- Nav Bar End -->
 
-
         <!-- Hero Start -->
-        <div class="hero">
+        <div class="hero" data-aos="fade-in">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-sm-12 col-md-6">
@@ -97,7 +100,7 @@
                             <p>
                                 Una barbería argentina tradicional con un estilo que te hace sentir como en casa, para hablar de fútbol, de la vida y además cortarte el pelo con los mejores profesionales.
                             </p>
-                            <a class="btn" href="">Reservar Turno</a>
+                            <a class="btn" href="" id="reservarBtn">Reservar turno</a>
                         </div>
                     </div>
                     <div class="col-sm-12 col-md-6 d-none d-md-block">
@@ -131,22 +134,21 @@
         </div> 
         <!-- Video Modal End -->
 
-
         <!-- About Start -->
         <div class="about">
             <div class="container">
                 <div class="row align-items-center">
                     <div class="col-lg-5 col-md-6">
-                        <div class="about-img">
+                        <div class="about-img" data-aos="fade-right">
                             <img src="img/about.jpg" alt="Image">
                         </div>
                     </div>
                     <div class="col-lg-7 col-md-6">
                         <div class="section-header text-left">
                             <p>Conocenos</p>
-                            <h2>15 Años de Experiencia</h2>
+                            <h2>15 Años de experiencia</h2>
                         </div>
-                        <div class="about-text">
+                        <div class="about-text" data-aos="fade-left">
                             <p>
                                 En Barbería Don Diego no solo venís a cortarte el pelo, venís a vivir una experiencia. Somos esa barbería de barrio donde el fútbol, las charlas de vida y el buen corte de pelo se encuentran.
                             </p>
@@ -161,21 +163,20 @@
         </div>
         <!-- About End -->
 
-
         <!-- Service Start -->
         <div class="service">
             <div class="container">
                 <div class="section-header text-center">
-                    <p>Nuestros Servicios</p>
-                    <h2>Los Mejores Servicios de Barbería para Vos</h2>
+                    <p>Nuestros servicios</p>
+                    <h2>Los mejores servicios de barbería para vos</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-md-6">
-                        <div class="service-item">
+                        <div class="service-item" data-aos="zoom-in">
                             <div class="service-img">
                                 <img src="img/service-1.jpg" alt="Image">
                             </div>
-                            <h3>Corte de Pelo</h3>
+                            <h3>Corte de pelo</h3>
                             <p>
                                 Corte tradicional argentino con técnicas clásicas y modernas para el hombre actual
                             </p>
@@ -183,7 +184,7 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="service-item">
+                        <div class="service-item" data-aos="zoom-in" data-aos-delay="100">
                             <div class="service-img">
                                 <img src="img/service-2.jpg" alt="Image">
                             </div>
@@ -195,11 +196,11 @@
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6">
-                        <div class="service-item">
+                        <div class="service-item" data-aos="zoom-in" data-aos-delay="200">
                             <div class="service-img">
                                 <img src="img/service-3.jpg" alt="Image">
                             </div>
-                            <h3>Lavado & Color</h3>
+                            <h3>Lavado & color</h3>
                             <p>
                                 Lavado profundo y coloración profesional para un look renovado y moderno
                             </p>
@@ -211,144 +212,96 @@
         </div>
         <!-- Service End -->
 
+        <!-- Formulario de reserva con InputMask -->
+        <div class="contact" id="reservaSection" style="display: none; background: #f8f9fa; padding: 60px 0;">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Reservá tu turno</p>
+                    <h2>Completá tus datos y te contactamos</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-md-8">
+                        <div class="contact-form">
+                            <form id="reservaForm">
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <input type="text" class="form-control" id="nombreReserva" placeholder="Tu nombre" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <input type="tel" class="form-control" id="telefonoReserva" placeholder="Tu teléfono" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control" id="servicioReserva" required>
+                                        <option value="">Seleccioná un servicio</option>
+                                        <option value="corte">Corte Básico - $12.000</option>
+                                        <option value="barba">Arreglo de Barba - $8.000</option>
+                                        <option value="completo">Corte + Barba - $18.000</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <textarea class="form-control" id="mensajeReserva" rows="3" placeholder="Algún comentario adicional..."></textarea>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn">Reservar turno</button>
+                                    <button type="button" class="btn btn-secondary" id="cancelarReserva">Cancelar</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <!-- Pricing Start -->
         <div class="price">
             <div class="container">
                 <div class="section-header text-center">
-                    <p>Nuestros Precios</p>
-                    <h2>La Mejor Calidad-Precio de la Ciudad</h2>
+                    <p>Nuestros precios</p>
+                    <h2>La Mejor Calidad-Precio de la ciudad</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
+                        <div class="price-item" data-aos="flip-left">
                             <div class="price-img">
                                 <img src="img/price-1.jpg" alt="Image">
                             </div>
                             <div class="price-text">
-                                <h2>Corte Básico</h2>
+                                <h2>Corte básico</h2>
                                 <h3>$12.000</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
+                        <div class="price-item" data-aos="flip-left" data-aos-delay="100">
                             <div class="price-img">
                                 <img src="img/price-2.jpg" alt="Image">
                             </div>
                             <div class="price-text">
-                                <h2>Corte + Lavado</h2>
+                                <h2>Corte + lavado</h2>
                                 <h3>$15.000</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
+                        <div class="price-item" data-aos="flip-left" data-aos-delay="200">
                             <div class="price-img">
                                 <img src="img/price-3.jpg" alt="Image">
                             </div>
                             <div class="price-text">
-                                <h2>Tinte de Pelo</h2>
+                                <h2>Tinte de pelo</h2>
                                 <h3>$18.000</h3>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
+                        <div class="price-item" data-aos="flip-left" data-aos-delay="300">
                             <div class="price-img">
                                 <img src="img/price-4.jpg" alt="Image">
                             </div>
                             <div class="price-text">
-                                <h2>Afeitado Clásico</h2>
+                                <h2>Afeitado clásico</h2>
                                 <h3>$10.000</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-5.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Arreglo de Barba</h2>
-                                <h3>$8.000</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-6.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Servicio Facial</h2>
-                                <h3>$20.000</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-7.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Tratamiento</h2>
-                                <h3>$16.000</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-8.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Recorte Barba</h2>
-                                <h3>$7.000</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-9.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Barba Completa</h2>
-                                <h3>$12.000</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-10.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Corte Especial</h2>
-                                <h3>$25.000</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-11.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Limpieza Facial</h2>
-                                <h3>$14.000</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6">
-                        <div class="price-item">
-                            <div class="price-img">
-                                <img src="img/price-12.jpg" alt="Image">
-                            </div>
-                            <div class="price-text">
-                                <h2>Masaje Capilar</h2>
-                                <h3>$9.000</h3>
                             </div>
                         </div>
                     </div>
@@ -356,7 +309,6 @@
             </div>
         </div>
         <!-- Pricing End -->
-        
         
         <!-- Testimonial Start -->
         <div class="testimonial">
@@ -378,69 +330,60 @@
                         <h2>Martín López</h2>
                         <h3>Cliente Habitual</h3>
                     </div>
-                    <div class="testimonial-item">
-                        <img src="img/testimonial-3.jpg" alt="Image">
-                        <p>
-                            "Probé muchas barberías pero en Don Diego encontré mi lugar. Los barberos son artistas y el ambiente es increíble. Siempre recomendado a mis amigos."
-                        </p>
-                        <h2>Javier Gómez</h2>
-                        <h3>Nuevo Cliente</h3>
-                    </div>
                 </div>
             </div>
         </div>
         <!-- Testimonial End -->
 
-
         <!-- Team Start -->
         <div class="team">
             <div class="container">
                 <div class="section-header text-center">
-                    <p>Nuestro Equipo</p>
-                    <h2>Conocé a Nuestros Expertos Barberos</h2>
+                    <p>Nuestro equipo</p>
+                    <h2>Conocé a nuestros expertos barberos</h2>
                 </div>
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
+                        <div class="team-item" data-aos="flip-up">
                             <div class="team-img">
                                 <img src="img/team-1.jpg" alt="Team Image">
                             </div>
                             <div class="team-text">
                                 <h2>Diego Martínez</h2>
-                                <p>Barbero Principal</p>
+                                <p>Barbero principal</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
+                        <div class="team-item" data-aos="flip-up" data-aos-delay="100">
                             <div class="team-img">
                                 <img src="img/team-2.jpg" alt="Team Image">
                             </div>
                             <div class="team-text">
                                 <h2>Roberto Sánchez</h2>
-                                <p>Especialista en Cortes</p>
+                                <p>Especialista en cortes</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
+                        <div class="team-item" data-aos="flip-up" data-aos-delay="200">
                             <div class="team-img">
                                 <img src="img/team-3.jpg" alt="Team Image">
                             </div>
                             <div class="team-text">
                                 <h2>Lucas Rodriguez</h2>
-                                <p>Experto en Barbas</p>
+                                <p>Experto en barbas</p>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <div class="team-item">
+                        <div class="team-item" data-aos="flip-up" data-aos-delay="300">
                             <div class="team-img">
                                 <img src="img/team-4.jpg" alt="Team Image">
                             </div>
                             <div class="team-text">
                                 <h2>Mariano Fernández</h2>
-                                <p>Colorista Profesional</p>
+                                <p>Colorista profesional</p>
                             </div>
                         </div>
                     </div>
@@ -448,107 +391,73 @@
             </div>
         </div>
         <!-- Team End -->
-        
-        
-        <!-- Contact Start -->
-        <div class="contact">
-            <div class="container-fluid">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-4"></div>
-                        <div class="col-md-8">
-                            <div class="contact-form">
-                                <div id="success"></div>
-                                <form name="sentMessage" id="contactForm" novalidate="novalidate">
-                                    <div class="control-group">
-                                        <input type="text" class="form-control" id="name" placeholder="Tu Nombre" required="required" data-validation-required-message="Por favor ingresa tu nombre" />
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="email" class="form-control" id="email" placeholder="Tu Email" required="required" data-validation-required-message="Por favor ingresa tu email" />
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                    <div class="control-group">
-                                        <input type="text" class="form-control" id="subject" placeholder="Asunto" required="required" data-validation-required-message="Por favor ingresa un asunto" />
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                    <div class="control-group">
-                                        <textarea class="form-control" id="message" placeholder="Mensaje" required="required" data-validation-required-message="Por favor ingresa tu mensaje"></textarea>
-                                        <p class="help-block text-danger"></p>
-                                    </div>
-                                    <div>
-                                        <button class="btn" type="submit" id="sendMessageButton">Enviar Mensaje</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Contact End -->
-
 
         <!-- Blog Start -->
         <div class="blog">
             <div class="container">
                 <div class="section-header text-center">
                     <p>Últimas Novedades</p>
-                    <h2>Enterate de las Últimas Tendencias en Barbería</h2>
+                    <h2>Enterate de las últimas tendencias en barbería</h2>
                 </div>
-                <div class="owl-carousel blog-carousel">
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/blog-1.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-meta">
-                            <i class="fa fa-list-alt"></i>
-                            <a href="">Corte de Pelo</a>
-                            <i class="fa fa-calendar-alt"></i>
-                            <p>15-Oct-2024</p>
-                        </div>
-                        <div class="blog-text">
-                            <h2>Tendencias de Otoño 2025</h2>
-                            <p>
-                                Los cortes que van a dominar esta temporada. Estilos clásicos con toques modernos.
-                            </p>
-                            <a class="btn" href="">Leer Más <i class="fa fa-angle-right"></i></a>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/blog-2.jpg" alt="Blog">
-                        </div>
-                        <div class="blog-meta">
-                            <i class="fa fa-list-alt"></i>
-                            <a href="">Estilo de Barba</a>
-                            <i class="fa fa-calendar-alt"></i>
-                            <p>15-Oct-2025</p>
-                        </div>
-                        <div class="blog-text">
-                            <h2>Cómo Mantener tu Barba Perfecta</h2>
-                            <p>
-                                Tips y productos esenciales para mantener tu barba en perfecto estado durante todo el año.
-                            </p>
-                            <a class="btn" href="">Leer Más <i class="fa fa-angle-right"></i></a>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="blog-item" data-aos="fade-up">
+                            <div class="blog-img">
+                                <img src="img/blog-1.jpg" alt="Blog">
+                            </div>
+                            <div class="blog-meta">
+                                <i class="fa fa-list-alt"></i>
+                                <a href="">Corte de Pelo</a>
+                                <i class="fa fa-calendar-alt"></i>
+                                <p id="fecha-actual">Cargando fecha...</p>
+                            </div>
+                            <div class="blog-text">
+                                <h2>Tendencias de Otoño 2024</h2>
+                                <p>
+                                    Los cortes que van a dominar esta temporada. Estilos clásicos con toques modernos.
+                                </p>
+                                <a class="btn" href="">Leer Más <i class="fa fa-angle-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="blog-item">
-                        <div class="blog-img">
-                            <img src="img/blog-3.jpg" alt="Blog">
+                    <div class="col-md-4">
+                        <div class="blog-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="blog-img">
+                                <img src="img/blog-2.jpg" alt="Blog">
+                            </div>
+                            <div class="blog-meta">
+                                <i class="fa fa-list-alt"></i>
+                                <a href="">Estilo de barba</a>
+                                <i class="fa fa-calendar-alt"></i>
+                                <p>15-Oct-2024</p>
+                            </div>
+                            <div class="blog-text">
+                                <h2>Cómo mantener tu barba perfecta</h2>
+                                <p>
+                                    Tips y productos esenciales para mantener tu barba en perfecto estado durante todo el año.
+                                </p>
+                                <a class="btn" href="">Leer Más <i class="fa fa-angle-right"></i></a>
+                            </div>
                         </div>
-                        <div class="blog-meta">
-                            <i class="fa fa-list-alt"></i>
-                            <a href="">Cuidado Capilar</a>
-                            <i class="fa fa-calendar-alt"></i>
-                            <p>10-Oct-2025</p>
-                        </div>
-                        <div class="blog-text">
-                            <h2>Productos que usamos</h2>
-                            <p>
-                                Conocé los productos premium que utilizamos en Barbería Don Diego para garantizar los mejores resultados.
-                            </p>
-                            <a class="btn" href="">Leer Más <i class="fa fa-angle-right"></i></a>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="blog-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="blog-img">
+                                <img src="img/blog-3.jpg" alt="Blog">
+                            </div>
+                            <div class="blog-meta">
+                                <i class="fa fa-list-alt"></i>
+                                <a href="">Cuidado capilar</a>
+                                <i class="fa fa-calendar-alt"></i>
+                                <p>10-Oct-2024</p>
+                            </div>
+                            <div class="blog-text">
+                                <h2>Productos que usamos</h2>
+                                <p>
+                                    Conocé los productos premium que utilizamos en Barbería Don Diego para garantizar los mejores resultados.
+                                </p>
+                                <a class="btn" href="">Leer Más <i class="fa fa-angle-right"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -556,10 +465,16 @@
         </div>
         <!-- Blog End -->
 
-
         <!-- Footer Start -->
         <div class="footer">
             <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center mb-4">
+                        <div class="fecha-actual-container">
+                            <h4 id="fechaHoy" style="color: #FDBE33; font-weight: bold;"></h4>
+                        </div>
+                    </div>
+                </div>
                 <div class="row">
                     <div class="col-lg-7">
                         <div class="row">
@@ -627,11 +542,72 @@
         <script src="lib/isotope/isotope.pkgd.min.js"></script>
         <script src="lib/lightbox/js/lightbox.min.js"></script>
         
+        <!-- Paquetes npm via CDN -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/inputmask@5.0.8/dist/inputmask.min.js"></script>
+        
         <!-- Contact Javascript File -->
         <script src="mail/jqBootstrapValidation.min.js"></script>
         <script src="mail/contact.js"></script>
 
         <!-- Template Javascript -->
         <script src="js/main.js"></script>
+
+        <!-- Script para los paquetes npm -->
+        <script>
+            // Inicializar animacion de scroll
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100
+            });
+
+            // InputMask para teléfono
+            document.addEventListener('DOMContentLoaded', function() {
+                const phoneInput = document.getElementById('telefonoReserva');
+                if (phoneInput) {
+                    Inputmask({"mask": "(999) 999-9999"}).mask(phoneInput);
+                }
+
+                // Mostrar/ocultar formulario de reserva
+                const reservarBtn = document.getElementById('reservarBtn');
+                const reservaSection = document.getElementById('reservaSection');
+                const cancelarReserva = document.getElementById('cancelarReserva');
+                const reservaForm = document.getElementById('reservaForm');
+
+                if (reservarBtn && reservaSection) {
+                    reservarBtn.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        reservaSection.style.display = 'block';
+                        reservaSection.scrollIntoView({ behavior: 'smooth' });
+                    });
+
+                    cancelarReserva.addEventListener('click', function() {
+                        reservaSection.style.display = 'none';
+                    });
+
+                    reservaForm.addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        alert('¡Gracias por tu reserva! Te contactaremos pronto para confirmar.');
+                        reservaForm.reset();
+                        reservaSection.style.display = 'none';
+                    });
+                }
+
+                // Mostrar fecha actual 
+                const today = new Date();
+                const formattedDate = today.toLocaleDateString('es-AR', {
+                    weekday: 'long',
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+                
+                const fechaElement = document.getElementById('fechaHoy');
+                if (fechaElement) {
+                    fechaElement.textContent = 'Hoy es ' + formattedDate;
+                }
+            });
+        </script>
     </body>
 </html>
